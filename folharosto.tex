@@ -1,0 +1,33 @@
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+
+    \vspace*{\fill}
+    \vspace*{\fill}
+    \begin{center}
+      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+    \end{center}
+
+    \vspace*{\fill}
+
+    \abntex@ifnotempty{\imprimirpreambulo}{
+      \hspace{.45\textwidth}
+      \begin{minipage}{.5\textwidth}
+        \SingleSpacing
+          \ABNTEXfontereduzida
+          \imprimirpreambulo
+      \end{minipage}
+      \vspace*{\fill}
+    }
+
+
+    \vspace*{\fill}
+
+    \imprimirlocal
+    \par
+    \imprimirdata
+    % \vspace*{1cm}
+
+    \end{center}
+}
+\makeatother

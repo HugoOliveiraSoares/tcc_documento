@@ -1,0 +1,76 @@
+\documentclass[12pt,article,a4paper,brazil]{abntex2}
+
+\usepackage[brazil]{babel}
+\usepackage[left=3.0cm,top=3.0cm,right=2.0cm,bottom=2.0cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+\setlength{\parindent}{1.25cm}
+\linespread{1.5}
+
+\hypersetup{
+  		colorlinks=true,
+    	citecolor=black,
+      linkcolor=black,
+      urlcolor=blue 
+}
+
+\addto\captionsbrazil{
+%% ajusta nomes padroes do babel
+\renewcommand{\bibname}{Referências}
+\renewcommand{\indexname}{Índice}
+\renewcommand{\listfigurename}{Lista de ilustrações}
+\renewcommand{\listtablename}{Lista de tabelas}
+%% ajusta nomes usados com a macro \autoref
+\renewcommand{\pageautorefname}{página}
+\renewcommand{\sectionautorefname}{seção}
+\renewcommand{\subsectionautorefname}{subseção}
+\renewcommand{\paragraphautorefname}{parágrafo}
+\renewcommand{\subsubsectionautorefname}{subseção}
+}
+
+
+\data{2023}
+
+\begin{document}
+
+  
+  \titulo{VLC(Visible Light Communication)}
+  \autor{Hugo Oliveira Soares}
+  \local{Belo Horizonte}
+  \instituicao{Dom Helder Escola Superior}
+  \orientador{Prof. XXX}
+  \coorientador{Prof. Ricardo Luiz de Freitas}
+  \preambulo{
+    Projeto de Pesquisa apresentado à Escola de Engenharia de Minas Gerais – EMGE como requisito parcial para obtenção do título de Cientista da Computação.
+    \par
+    Orientador(a) de conteúdo: \imprimirorientador
+    \par
+    Orientador de metodologia: \imprimircoorientador
+  }
+
+  % Parte pré-textual
+  \include{capa} 
+  \include{folharosto}
+  \imprimircapa
+  \imprimirfolhaderosto
+
+  % \listoffigures
+  % \listoftables
+  \tableofcontents %SUMARIO
+
+  %% Capitulos
+  \include{capitulos/introducao}
+  \include{capitulos/hipoteses}
+  \include{capitulos/objetivos}
+  \include{capitulos/justificativa}
+  \include{capitulos/referencialTeorico}
+  \include{capitulos/metodologia}
+
+  \bibliography{referencias}
+
+\end{document}

@@ -1,22 +1,32 @@
-\documentclass[12pt,article,a4paper,brazil]{abntex2}
+\documentclass[12pt,article,a4paper,english,brazil]{abntex2}
 
 \usepackage[brazil]{babel}
 \usepackage[left=3.0cm,top=3.0cm,right=2.0cm,bottom=2.0cm]{geometry}
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage[alf]{abntex2cite}	% CITAÇÕES PADRÃO ABNT
 \usepackage{fontspec}
 \setmainfont{Arial}
 
+% O tamanho do parágrafo(recuo) é dado por:
 \setlength{\parindent}{1.25cm}
 \linespread{1.5}
 
+\selectlanguage{brazil}
+
+\makeatletter
 \hypersetup{
+      pdftitle={\@title}, 
+		  pdfauthor={\@author},
+	    pdfcreator={Hugo Soares},
+      pdfkeywords={VLC}{Visible Light Communication}{Raspberripy}{Dom Helder},
   		colorlinks=true,
     	citecolor=black,
       linkcolor=black,
-      urlcolor=blue 
+      urlcolor=blue,
+	    bookmarksdepth=4
 }
 
 \addto\captionsbrazil{
@@ -33,43 +43,44 @@
 \renewcommand{\subsubsectionautorefname}{subseção}
 }
 
-
 \data{2023}
 
 \begin{document}
-
   
   \titulo{VLC(Visible Light Communication)}
   \autor{Hugo Oliveira Soares}
   \local{Belo Horizonte}
   \instituicao{Dom Helder Escola Superior}
-  \orientador{Prof. XXX}
+  \orientador{Prof. Marden Cicarelli Pinheiro}
   \coorientador{Prof. Ricardo Luiz de Freitas}
   \preambulo{
-    Projeto de Pesquisa apresentado à Escola de Engenharia de Minas Gerais – EMGE como requisito parcial para obtenção do título de Cientista da Computação.
-    \par
-    Orientador(a) de conteúdo: \imprimirorientador
-    \par
+    Projeto de Pesquisa apresentado à Dom Helder Escola Superior como requisito parcial para obtenção do título de Cientista da Computação.
+    \newline 
+    \newline
+    Orientador de conteúdo: \imprimirorientador
+    \newline
+    \newline
     Orientador de metodologia: \imprimircoorientador
   }
 
-  % Parte pré-textual
+  % PARTE PRÉ-TEXTUAL
   \include{capa} 
   \include{folharosto}
   \imprimircapa
   \imprimirfolhaderosto
 
-  % \listoffigures
-  % \listoftables
+  \listoffigures
+  \include{siglas}
+  \newpage
   \tableofcontents %SUMARIO
 
-  %% Capitulos
+  %% CAPITULOS
   \include{capitulos/introducao}
-  \include{capitulos/hipoteses}
+  % \include{capitulos/hipoteses}
   \include{capitulos/objetivos}
   \include{capitulos/justificativa}
-  \include{capitulos/referencialTeorico}
-  \include{capitulos/metodologia}
+  % \include{capitulos/referencialTeorico}
+  % \include{capitulos/metodologia}
 
   \bibliography{referencias}
 
